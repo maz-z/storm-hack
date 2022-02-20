@@ -6,6 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
@@ -15,9 +16,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Deals = ({navigation}) => {
     return(
         <SafeAreaView>
-            <View>
-                <Text>Deals yo</Text>
-            </View>
+            <TouchableOpacity onPress={()=> navigation.goBack()}>
+                <View>
+                    <Text>Deals yo</Text>
+                </View>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
