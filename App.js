@@ -18,16 +18,22 @@ import {
   View,
 } from 'react-native';
 
+import Home from './src/pages/home';
+import Deals from './src/pages/deals';
+
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const App = () => {
+  const Stack = createNativeStackNavigator();
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Wtf</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name = "Home" component = {Home}/>
+        <Stack.Screen name = "Deals" component = {Deals}/>
+
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 
